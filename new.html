@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Ghoomakad</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/bootstrap-glyphicons.css" media="screen" />
+		<link rel="stylesheet" href="css/new.css" type="text/css" />
+
+		<!--<link rel="stylesheet" href="js/bootstrap.min.js" media="screen" />-->
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+		<script src="js/jquery-1.9.js"></script>
+
+		<div id="fb-root"></div>
+		<script>
+			( function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id))
+						return;
+					js = d.createElement(s);
+					js.id = id;
+					js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=152446341461503";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+
+			/*	! function(d, s, id) {
+			 var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+			 if (!d.getElementById(id)) {
+			 js = d.createElement(s);
+			 js.id = id;
+			 js.src = p + '://platform.twitter.com/widgets.js';
+			 fjs.parentNode.insertBefore(js, fjs);
+			 }
+			 }(document, 'script', 'twitter-wjs'); */
+
+			! function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+				if (!d.getElementById(id)) {
+					js = d.createElement(s);
+					js.id = id;
+					js.src = p + '://platform.twitter.com/widgets.js';
+					fjs.parentNode.insertBefore(js, fjs);
+				}
+			}(document, 'script', 'twitter-wjs');
+
+			$(document).ready(function() {
+				$("#emailtext").hide();
+				$("a.active").click(function() {
+					$(emailtext).toggle();
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="row">
+			<img src="img/blinking-stars2.gif" class="img-responsive background_image">
+		</div>
+		<div id="logoouter">
+			<div id="logoinner">
+				<img src="img/logotag1.png">
+			</div>
+		</div>
+		<div class="text col-lg-12">
+			<p>
+				For the souls in the grip of wanderlust, Ghoomakad offers a breathtaking experience in the Dhauladhar Himalayas
+				surrounding Dharamsala. Get touched by nature and feel the calming simplicity by living with the village families.
+				This experience also contributes towards the holistic sustenance of the village.
+			</p>
+		</div>
+		<div id="emailtext" class="text col-lg-12">
+			<hr width="20%"/>
+			<p>
+				Contact us at smokesignal@ghoomakad.im
+			</p>
+			<hr width="20%"/>
+		</div>
+
+		<div class="link1 col-lg-12">
+			<hr width="7%" />
+			<a href="#" class="active">Send us a smoke signal</a>
+			<hr width="7%"/>
+			<a href="#">Ghoomakad Diaries</a>
+			<hr width="7%"/>
+			<div class="fb-like" data-href="http://www.ghoomakad.im" data-width="200" data-layout="button_count" data-show-faces="true" data-send="false"></div>
+			<!--<a href="https://twitter.com/share" class="twitter-share-button" data-url="www.ghoomakad.im" data-via="rajeshjoshi104"></a>-->
+			<a href="https://twitter.com/ghoomakadim" class="twitter-follow-button" data-show-count="false"></a>
+
+		</div>
+	</body>
+</html>
