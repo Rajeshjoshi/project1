@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Rakkarmap </title>
+		<link rel="stylesheet" type="text/css" href="map.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" media="screen" />
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+		<!--[if lte IE 8]>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+		<![endif]-->
+
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+	</head>
+	<body class="container-fluid my">
+		<div class="row-fluid">
+			<h1 class="text-left">Rakkar Map</h1>
+			<div id="map"></div>
+		</div>
+		<p id="demo">
+			Click the button to get your coordinates:-
+		</p>
+		<button onclick="getLocation()">
+			Try It
+		</button>
+
+		<script>
+			// create a map in the "map" div, set the view to a given place and zoom
+			var map = L.map('map').setView([32.19005, 76.26495], 13);
+
+			// add an OpenStreetMap tile layer
+			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+				attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+			}).addTo(map);
+
+			// add a marker in the given location, attach some popup content to it and open the popup
+			L.marker([32.1983348, 76.3665628]).addTo(map).bindPopup('A pretty CSS3 popup. <br> Easily customizable.').openPopup();
+
+			var x = document.getElementById("demo");
+			function getLocation() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else {
+					x.innerHTML = "Geolocation is not supported by this browser.";
+				}
+			}
+
+			function showPosition(position) {
+				x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+			}
+		</script>
+	</body>
+</html>
